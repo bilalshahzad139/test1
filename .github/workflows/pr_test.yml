@@ -4,7 +4,6 @@ name: AddReviewers-PR
 on:
   pull_request:
     types: [ready_for_review]
-  push:
     tags-ignore:
       - '**'
     branches-ignore:
@@ -21,11 +20,6 @@ jobs:
       run : |
         echo $GITHUB_RUN_ID
         echo $GITHUB_RUN_NUMBER
-    - name: Add Pull Request Reviewer
-      uses: kentaro-m/auto-assign-action@v1.1.2
-      with:
-        configuration-path: '.github/auto_assign.yml'
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
         
     
       
