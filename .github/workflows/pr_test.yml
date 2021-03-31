@@ -3,8 +3,15 @@ name: AddReviewers-PR
 
 on:
   pull_request:
-    branches: [ master ]
     types: [ready_for_review]
+  push:
+    tags-ignore:
+      - '**'
+    branches-ignore:
+      - 'main'
+  workflow_dispatch:
+    branches:
+      - '**'
 
 jobs:
   build:
