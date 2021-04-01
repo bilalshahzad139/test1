@@ -2,12 +2,11 @@
 name: AddReviewers-PR
 
 on:
-  pull_request:
-    types: [ready_for_review,synchronize]
+  push:
     tags-ignore:
       - '**'
     branches-ignore:
-      - 'main'
+      - 'master'
   workflow_dispatch:
     branches:
       - '**'
@@ -20,6 +19,11 @@ jobs:
       run : |
         echo $GITHUB_RUN_ID
         echo $GITHUB_RUN_NUMBER
+
+    if: github.event.pull_request.draft == false
+    - name: skip testing
+      run: echo skipped
+
         
     
       
