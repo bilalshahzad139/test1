@@ -21,8 +21,9 @@ jobs:
         echo $GITHUB_RUN_NUMBER
     
     - name: skip testing
-      run: echo skipped
       if: github.event.pull_request.draft == false
+      run: echo skipped
+      
 
         
     
