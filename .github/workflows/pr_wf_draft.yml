@@ -1,5 +1,5 @@
 
-name: AddReviewers-PR1
+name: PR-Review-Draft
 
 on:
   pull_request:
