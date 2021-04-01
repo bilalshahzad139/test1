@@ -4,7 +4,7 @@ name: AddReviewers-PR
 on:
   pull_request:
     branches: [ master ]
-  
+    types: [ready_for_review, opened, synchronize, reopened]
 
 
   workflow_dispatch:
@@ -20,6 +20,9 @@ jobs:
         echo $GITHUB_RUN_ID
         echo $GITHUB_RUN_NUMBER
         echo draft-${{ github.event.pull_request.draft}}
+        echo ready_for_review-${{ github.event.pull_request.ready_for_review}}
+        echo opened-${{ github.event.pull_request.opened}}
+        echo reopened-${{ github.event.pull_request.reopened}}
     
     - name: skip testing
       if: ${{ github.event.pull_request.draft == false }}      
