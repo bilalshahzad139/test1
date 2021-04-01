@@ -3,7 +3,7 @@ name: AddReviewers-PR
 
 on:
   pull_request:
-    types: [ready_for_review]
+  
   push:
     tags-ignore:
       - '**'
