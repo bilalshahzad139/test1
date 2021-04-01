@@ -2,8 +2,8 @@
 name: AddReviewers-PR
 
 on:
-  pull_request_review:
-    types: [submitted, edited]
+  pull_request:
+    types: [ready_for_review,synchronize]
     tags-ignore:
       - '**'
     branches-ignore:
