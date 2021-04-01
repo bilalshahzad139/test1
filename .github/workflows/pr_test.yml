@@ -3,12 +3,8 @@ name: AddReviewers-PR
 
 on:
   pull_request:
-  
-  push:
-    tags-ignore:
-      - '**'
-    branches-ignore:
-      - 'master'
+    branches: [ main ]
+
   workflow_dispatch:
     branches:
       - '**'
@@ -27,6 +23,7 @@ jobs:
       run: |
        echo in skipped
        echo ${{ github.event.pull_request.draft}}
+       echo ${{ github.workflow_dispatch}}
       
 
         
