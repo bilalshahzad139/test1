@@ -23,6 +23,7 @@ jobs:
         echo ready_for_review-${{ github.event.pull_request.ready_for_review}}
         echo opened-${{ github.event.pull_request.opened}}
         echo reopened-${{ github.event.pull_request.reopened}}
+        echo synchronize-${{ github.event.pull_request.synchronize}}
     
     - name: skip testing
       if: ${{ github.event.pull_request.draft == false }}      
