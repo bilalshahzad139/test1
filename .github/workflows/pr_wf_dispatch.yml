@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest     
     steps:
-    - name: test printing 
+    - name: test printing 123
       run : |
         echo $GITHUB_RUN_ID
         echo $GITHUB_RUN_NUMBER
@@ -31,6 +31,15 @@ jobs:
        echo in skipped
        echo ${{ github.event.pull_request.draft}}
        echo ${{ github.workflow_dispatch}}
+
+  test:
+    if: ${{ github.event.pull_request.draft == false }} 
+    runs-on: ubuntu-latest     
+    steps:
+    - name: test job printing
+      run : |
+        echo $GITHUB_RUN_ID
+
       
 
         
