@@ -3,13 +3,9 @@ name: AddReviewers-PR
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
   
-  push:
-    tags-ignore:
-      - '**'
-    branches-ignore:
-      - 'master'
+
 
   workflow_dispatch:
     branches:
