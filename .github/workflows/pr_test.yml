@@ -19,6 +19,7 @@ jobs:
       run : |
         echo $GITHUB_RUN_ID
         echo $GITHUB_RUN_NUMBER
+        echo draft-${{ github.event.pull_request.draft}}
     
     - name: skip testing
       if: ${{ github.event.pull_request.draft == false }}      
